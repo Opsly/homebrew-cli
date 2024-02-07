@@ -5,21 +5,21 @@
 class Opsly < Formula
   desc ""
   homepage "https://opslycloud.com/"
-  version "0.0.1-alpha.15"
+  version "0.0.1-alpha.16"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/Opsly/homebrew-cli/releases/download/v0.0.1-alpha.15/opsly_Darwin_x86_64", using: CurlDownloadStrategy
-      sha256 "c09e5c5456ab743b53ce5fea5db4257aa02c88b17230da11d62c1fa6efcc7ecf"
+      url "https://github.com/Opsly/homebrew-cli/releases/download/v0.0.1-alpha.16/opsly_Darwin_x86_64", using: CurlDownloadStrategy
+      sha256 "0acd366d57ef03d87effae453eca5b4200abf49d0d36a14b5473af8dc01d4072"
 
       def install
         bin.install "opsly_Darwin_x86_64" => "opsly"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/Opsly/homebrew-cli/releases/download/v0.0.1-alpha.15/opsly_Darwin_arm64", using: CurlDownloadStrategy
-      sha256 "f50ac329b177944b4170b77f39e8e5ffeedd53e736498572ac0a3448d32253b6"
+      url "https://github.com/Opsly/homebrew-cli/releases/download/v0.0.1-alpha.16/opsly_Darwin_arm64", using: CurlDownloadStrategy
+      sha256 "82a9f4df99164ab9bff790ab12f5b75d0b60802eb7747e0e272dfa29c54f6bb5"
 
       def install
         bin.install "opsly_Darwin_arm64" => "opsly"
@@ -28,20 +28,20 @@ class Opsly < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/Opsly/homebrew-cli/releases/download/v0.0.1-alpha.15/opsly_Linux_arm64", using: CurlDownloadStrategy
-      sha256 "fcc33d4a2a8433edd5a0c92cf0ca9f81f40b310ffd40e9e373829b3b51a2922e"
-
-      def install
-        bin.install "opsly_Linux_arm64" => "opsly"
-      end
-    end
     if Hardware::CPU.intel?
-      url "https://github.com/Opsly/homebrew-cli/releases/download/v0.0.1-alpha.15/opsly_Linux_x86_64", using: CurlDownloadStrategy
-      sha256 "39bd3de989bee7068f1e5ab61078ccd32829ebf3b9d90f9a0cdc88597ce966bd"
+      url "https://github.com/Opsly/homebrew-cli/releases/download/v0.0.1-alpha.16/opsly_Linux_x86_64", using: CurlDownloadStrategy
+      sha256 "3bb267a0e08e47c157eb5ed6b25dff85f8ffd83394a6d8f1994a259823cb1d45"
 
       def install
         bin.install "opsly_Linux_x86_64" => "opsly"
+      end
+    end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/Opsly/homebrew-cli/releases/download/v0.0.1-alpha.16/opsly_Linux_arm64", using: CurlDownloadStrategy
+      sha256 "0e39d709db9a70199adfc4fc160b91612362b5b3563e76b34ec82fef40f0b64a"
+
+      def install
+        bin.install "opsly_Linux_arm64" => "opsly"
       end
     end
   end
